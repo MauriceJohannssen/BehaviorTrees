@@ -9,11 +9,11 @@ public class SelectorNode : Node
         this.nodes = nodes;
     }
 
-    public override State EvaluateStatus()
+    public override State EvaluateState()
     {
         foreach (Node node in nodes)
         {
-            switch (node.EvaluateStatus())
+            switch (node.EvaluateState())
             {
                 case State.Running:
                     nodeState = State.Running;
@@ -24,7 +24,7 @@ public class SelectorNode : Node
                     return nodeState;
 
                 case State.Failure:
-                    //Do nothing
+                    //Do nothing and continue checking the next node
                     break;
 
                 default:

@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class InverterNode : Node
+﻿public class InverterNode : Node
 {
     Node node;
 
@@ -11,11 +7,12 @@ public class InverterNode : Node
         this.node = node;
     }
 
-    public override State EvaluateStatus()
+    public override State EvaluateState()
     {
-        switch (node.EvaluateStatus())
+        switch (node.EvaluateState())
         {
             case State.Running:
+                //Nothing's changing here!
                 nodeState = State.Running;
                 break;
 

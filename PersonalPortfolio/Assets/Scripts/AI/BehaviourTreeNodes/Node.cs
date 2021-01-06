@@ -1,7 +1,6 @@
-﻿
-public abstract class Node
+﻿public abstract class Node
 {
-    public abstract State EvaluateStatus();
+    public abstract State EvaluateState();
     protected State nodeState;
     public State NodeState => nodeState;
 }

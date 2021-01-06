@@ -3,18 +3,19 @@
 public class SequenceNode : Node
 {
     private List<Node> nodes = new List<Node>();
+
     public SequenceNode(List<Node> nodes)
     {
         this.nodes = nodes;
     }
 
-    public override State EvaluateStatus()
+    public override State EvaluateState()
     {
         bool anyNodeRunning = false;
 
         foreach (Node node in nodes)
         {
-            switch (node.EvaluateStatus())
+            switch (node.EvaluateState())
             {
                 case State.Running:
                     anyNodeRunning = true;
@@ -25,8 +26,9 @@ public class SequenceNode : Node
                     break;
 
                 case State.Failure:
+                    //If a failure occures during the sequence the whole sequence stops
                     nodeState = State.Failure;
-                    return State.Failure;
+                    return nodeState;
 
                 default:
                     break;
