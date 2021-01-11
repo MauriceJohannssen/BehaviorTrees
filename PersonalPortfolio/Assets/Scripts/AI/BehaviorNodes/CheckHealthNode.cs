@@ -1,4 +1,6 @@
-﻿public class CheckHealthNode : Node
+﻿using UnityEngine;
+
+public class CheckHealthNode : Node
 {
     AIBlackboard AI;
     float criticalHealthThreshold;
