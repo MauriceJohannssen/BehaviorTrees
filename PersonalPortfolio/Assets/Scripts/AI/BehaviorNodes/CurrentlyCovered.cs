@@ -16,10 +16,12 @@ public class CurrentlyCovered : Node
         if (Physics.Linecast(_AI.transform.position, _player.transform.position))
         {
             //If it hits something, it must be any but the player, since the player is being ignored
-            _AI.IsCovered = true;
-            return State.Success;
+            _AI.isCovered = true;
+            nodeState = State.Success;
+            return nodeState;
         }
-        
-        return State.Failure;
+
+        nodeState = State.Failure;
+        return nodeState;
     }
 }

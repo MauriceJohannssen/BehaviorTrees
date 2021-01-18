@@ -1,29 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AttackNode : Node
 {
-    private AIBlackboard AI;
+    private AIBlackboard _AI;
     private Transform _player;
+    private float _timeSinceLastShot;
+    
     public AttackNode(AIBlackboard AI, Transform player)
     {
-        this.AI = AI;
+        _AI = AI;
         _player = player;
     }
 
     public override State EvaluateState()
     {
-        if (AI.timeSinceLastShot >= AI.ShootInterval)
-        {
-            AI.GetComponent<EnemyWeapon>().Shoot();
-            AI.timeSinceLastShot = 0;
-        }
-
-        AI.timeSinceLastShot += Time.deltaTime;
+        _AI.NavAgent.isStopped = true;
         
-        AI.AIstate = AIState.Attack;
-        Debug.Log("attack boi");
-        return State.Success;
+        //This can only be as precise as the times called
+        if (_timeSinceLastShot >= _AI.ShootInterval)
+        {
+            _AI.GetComponent<EnemyWeapon>().Shoot();
+            _timeSinceLastShot = 0;
+        }
+        
+        _timeSinceLastShot += Time.deltaTime;
+        _AI.AIstate = AIState.Attack;
+
+        //Can this even be a failure?
+        nodeState = State.Success;
+        return nodeState;
     }
 }

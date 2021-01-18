@@ -1,17 +1,17 @@
 ﻿public class CheckHealthNode : Node
 {
-    AIBlackboard AI;
-    float criticalHealthThreshold;
+    private AIBlackboard _AI;
+    private float _criticalHealthThreshold;
 
     public CheckHealthNode(AIBlackboard AI, float criticalHealthThreshold)
     {
-        this.AI = AI;
-        this.criticalHealthThreshold = criticalHealthThreshold;
+        _AI = AI;
+        _criticalHealthThreshold = criticalHealthThreshold;
     }
 
     public override State EvaluateState()
     {
-        nodeState = AI.CurrentHealth >= criticalHealthThreshold ? State.Failure : State.Success;
+        nodeState = _AI.CurrentHealth >= _criticalHealthThreshold ? State.Failure : State.Success;
         return nodeState;
     }
 }

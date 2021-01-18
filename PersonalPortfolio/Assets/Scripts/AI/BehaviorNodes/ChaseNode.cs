@@ -1,24 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ChaseNode : Node
 {
-    private AIBlackboard AI;
+    private AIBlackboard _AI;
     private Transform _player;
 
     public ChaseNode(AIBlackboard AI, Transform player)
     {
-        this.AI = AI;
+        _AI = AI;
         _player = player;
     }
 
     public override State EvaluateState()
     {
-        AI.NavAgent.isStopped = false;
-        AI.NavAgent.SetDestination(_player.position);
-        AI.AIstate = AIState.Attack;
-        Debug.Log("attack boi");
-        return State.Success;
+        _AI.NavAgent.isStopped = false;
+        _AI.NavAgent.SetDestination(_player.position);
+        _AI.AIstate = AIState.Chase;
+        
+        //Can this even be a failure?
+        nodeState = State.Success;
+        return nodeState;
     }
 }
