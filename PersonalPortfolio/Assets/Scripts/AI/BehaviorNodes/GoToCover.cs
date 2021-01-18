@@ -19,7 +19,7 @@ public class GoToCover : Node
             nodeState = State.Success;
             return nodeState;
         }
-        else if (_AI.AIstate == AIState.Hide && _AI.NavAgent.remainingDistance > 0.2f)
+        else if (_AI.AIstate == AIState.Hide)
         {
             nodeState = State.Running;
             return nodeState;

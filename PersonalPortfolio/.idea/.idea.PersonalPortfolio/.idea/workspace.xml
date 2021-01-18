@@ -22,17 +22,9 @@
     <list default="true" id="b8aa3e50-203a-4dcd-8529-8e48c5a46d4e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/NavMesh.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/NavMesh.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/AttackNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/AttackNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/ChaseNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/ChaseNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/CheckHealthNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/CheckHealthNode.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/CoverInReach.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/CoverInReach.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/CurrentlyCovered.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/CurrentlyCovered.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/GoToCover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/GoToCover.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/PlayerInReachNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/PlayerInReachNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyWeapon.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +113,7 @@
       <updated>1610122494262</updated>
       <workItem from="1610122520071" duration="1203000" />
       <workItem from="1610354069602" duration="6417000" />
-      <workItem from="1610958691425" duration="15617000" />
+      <workItem from="1610958691425" duration="17850000" />
     </task>
     <servers />
   </component>

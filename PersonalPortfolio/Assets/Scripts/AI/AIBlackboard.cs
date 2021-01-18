@@ -69,9 +69,9 @@ public class AIBlackboard : MonoBehaviour
         SequenceNode attackSequenceNode = new SequenceNode(new List<Node> {playerInReachNode, attackNode});
         
         ChaseNode chaseNode = new ChaseNode(this, _player.transform);
-        SequenceNode ChasePlayerNode = new SequenceNode(new List<Node> {new InverterNode(playerInReachNode), chaseNode});
+        SequenceNode chasePlayerNode = new SequenceNode(new List<Node> {new InverterNode(playerInReachNode), chaseNode});
         
-        _mainNode = new SelectorNode(new List<Node> { healthSequenceNode, attackSequenceNode, ChasePlayerNode });
+        _mainNode = new SelectorNode(new List<Node> { healthSequenceNode, attackSequenceNode, chasePlayerNode });
     }
 
     public void ReduceHealth(float damage) 

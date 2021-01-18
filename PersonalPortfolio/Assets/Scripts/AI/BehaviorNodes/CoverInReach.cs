@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CoverInReach : Node
 {
@@ -21,7 +20,7 @@ public class CoverInReach : Node
             //_AI.currentCoverSpot =_hidePositions[0].position + new Vector3(Mathf.Cos(testValue), 0, Mathf.Sin(testValue)) * 3;
             //_AI.NavAgent.SetDestination(_AI.currentCoverSpot);
             nodeState = State.Running;
-            //testValue += 50.0f;
+            Debug.Log("Readjust position in here");
             return nodeState;
         }
         
