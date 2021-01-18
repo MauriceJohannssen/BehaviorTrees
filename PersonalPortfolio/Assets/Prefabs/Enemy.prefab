@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2228218523685942220}
   - component: {fileID: 5613812970895222967}
   - component: {fileID: 8563712133614757303}
+  - component: {fileID: 3034678331940849141}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -112,6 +113,9 @@ MonoBehaviour:
   criticalHealthThreshold: 20
   hidePositions: []
   coverSpot: {x: 0, y: 0, z: 0}
+  IsCovered: 0
+  SightRadius: 500
+  AIstate: 0
 --- !u!195 &8563712133614757303
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -134,3 +138,16 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &3034678331940849141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4530431365560753868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de78e1b8fc27a6642b53455a4805e3d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 2082229734193603062, guid: f1d2bd3ad1568c84a842b309ddb554f2, type: 3}

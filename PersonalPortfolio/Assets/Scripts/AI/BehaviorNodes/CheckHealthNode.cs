@@ -1,19 +1,17 @@
-﻿using UnityEngine;
-
-public class CheckHealthNode : Node
+﻿public class CheckHealthNode : Node
 {
     AIBlackboard AI;
     float criticalHealthThreshold;
 
-    public CheckHealthNode(AIBlackboard AI, float critialHealthThreshold)
+    public CheckHealthNode(AIBlackboard AI, float criticalHealthThreshold)
     {
         this.AI = AI;
-        this.criticalHealthThreshold = critialHealthThreshold;
+        this.criticalHealthThreshold = criticalHealthThreshold;
     }
 
     public override State EvaluateState()
     {
-        nodeState = AI.CurrentHealth <= criticalHealthThreshold ? State.Success : State.Failure;
+        nodeState = AI.CurrentHealth >= criticalHealthThreshold ? State.Failure : State.Success;
         return nodeState;
     }
 }

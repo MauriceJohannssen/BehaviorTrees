@@ -17,7 +17,7 @@ public class CoverInReach : Node
 
     public override State EvaluateState()
     {
-        if (!_AI.NavAgent.isStopped) return State.Running;
+        if (!_AI.NavAgent.isStopped && _AI.AIstate == AIState.Hide) return State.Running;
         
         foreach (var possiblePosition in _hidePositions)
         {
