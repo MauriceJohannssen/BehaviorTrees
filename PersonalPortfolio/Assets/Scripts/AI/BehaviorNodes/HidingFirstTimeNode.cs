@@ -3,7 +3,6 @@
 public class HidingFirstTimeNode : Node
 {
     private AIBlackboard _AI;
-    private bool test = true;
 
     public HidingFirstTimeNode(AIBlackboard AI)
     {

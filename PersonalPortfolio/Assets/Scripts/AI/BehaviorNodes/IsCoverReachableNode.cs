@@ -1,13 +1,12 @@
-﻿using System.Diagnostics;
-using UnityEngine;
-using Debug = UnityEngine.Debug;
+﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class IsCoverReachableNode : Node
 {
-    private Transform[] _hidePositions;
+    private List<Transform> _hidePositions;
     private AIBlackboard _AI;
 
-    public IsCoverReachableNode(Transform[] hidePositions, AIBlackboard AI)
+    public IsCoverReachableNode(List<Transform> hidePositions, AIBlackboard AI)
     {
         _hidePositions = hidePositions;
         _AI = AI;

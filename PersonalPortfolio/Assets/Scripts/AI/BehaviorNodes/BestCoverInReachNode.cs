@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class BestCoverInReachNode : Node
 {
-    private Transform[] _hidePositions;
+    private List<Transform> _hidePositions;
     private AIBlackboard _AI;
 
-    public BestCoverInReachNode(Transform[] hidePositions, AIBlackboard AI)
+    public BestCoverInReachNode(List<Transform> hidePositions, AIBlackboard AI)
     {
         _hidePositions = hidePositions;
         _AI = AI;

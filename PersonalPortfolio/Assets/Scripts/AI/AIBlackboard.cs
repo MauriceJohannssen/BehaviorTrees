@@ -17,7 +17,7 @@ public class AIBlackboard : MonoBehaviour
     //Hide
     [SerializeField] private float hideRadius = 30.0f;
     public float HideRadius => hideRadius;
-    [SerializeField] public Transform[] hidePositions;
+    private List<Transform> hidePositions = new List<Transform>();
     [HideInInspector] public Vector3 currentCoverSpot;
     [HideInInspector] public bool isCovered;
     [HideInInspector] public bool hidingFirstTime;
@@ -42,6 +42,7 @@ public class AIBlackboard : MonoBehaviour
     {
         hidingFirstTime = true;
         _currentHealth = initialHealth;
+        GetAllHideables();
         NavAgent = GetComponent<NavMeshAgent>();
         NavAgent.isStopped = true;
         _player = GameObject.FindWithTag("Player");
@@ -54,7 +55,7 @@ public class AIBlackboard : MonoBehaviour
         //Reposition sequence
         
         //Reposition
-        RepositionNode repositionNode = new RepositionNode();
+        RepositionNode repositionNode = new RepositionNode(this);
         IsAtCoverNode isAtCoverNode = new IsAtCoverNode(this);
         //RepositionNode placed here
         SequenceNode repositionSequence = new SequenceNode(new List<Node> {isAtCoverNode, new InverterNode(repositionNode)});
@@ -115,5 +116,13 @@ public class AIBlackboard : MonoBehaviour
         isCovered = false;
         _mainNode.EvaluateState();
         RegenerateHealth();
+    }
+
+    private void GetAllHideables()
+    {
+        foreach (var hideableObject in GameObject.FindGameObjectsWithTag("Hideable"))
+        {
+            hidePositions.Add(hideableObject.transform);
+        }
     }
 }
