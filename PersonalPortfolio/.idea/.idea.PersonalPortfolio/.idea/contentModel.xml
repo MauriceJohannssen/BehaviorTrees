@@ -21,6 +21,7 @@
               <e p="IsAtCoverNode.cs" t="Include" />
               <e p="IsCoverReachableNode.cs" t="Include" />
               <e p="PlayerInReachNode.cs" t="Include" />
+              <e p="ReassignCover.cs" t="Include" />
               <e p="RepositionNode.cs" t="Include" />
             </e>
             <e p="BehaviourTreeNodes" t="Include">
@@ -36,6 +37,7 @@
           <e p="EnemyWeapon.cs" t="Include" />
           <e p="MeshDeform.cs" t="Include" />
           <e p="SimpleCameraController.cs" t="Include" />
+          <e p="ValidateHideableObject.cs" t="Include" />
           <e p="Weapon.cs" t="Include" />
         </e>
         <e p="TutorialInfo" t="Include">

@@ -20,13 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8aa3e50-203a-4dcd-8529-8e48c5a46d4e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/BestCoverInReachNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/BestCoverInReachNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/GoToCover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/GoToCover.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/IsCoverReachableNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/IsCoverReachableNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/RepositionNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/RepositionNode.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +47,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/ChaseNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/CurrentlyCovered.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/HidingFirstTimeNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/ReassignCover.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/GoToCover.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/AttackNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/IsAtCoverNode.cs" root0="FORCE_HIGHLIGHTING" />
@@ -65,11 +64,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/ChaseNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/AttackNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/HidingFirstTimeNode.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/BestCoverInReachNode.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/IsCoverReachableNode.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/RepositionNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/GoToCover.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ValidateHideableObject.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/IsCoverReachableNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/ReassignCover.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/BestCoverInReachNode.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mnHZUbqW4XZeyWog7mp9QjbNqw" />
@@ -127,7 +128,8 @@
       <workItem from="1610958691425" duration="18503000" />
       <workItem from="1611134881859" duration="9876000" />
       <workItem from="1611147814526" duration="6819000" />
-      <workItem from="1611159227136" duration="3170000" />
+      <workItem from="1611159227136" duration="3862000" />
+      <workItem from="1611178229531" duration="5026000" />
     </task>
     <servers />
   </component>

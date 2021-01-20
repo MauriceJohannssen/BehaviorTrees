@@ -14,9 +14,8 @@ public class BestCoverInReachNode : Node
 
     public override State EvaluateState()
     {
-        Debug.Log("BestCoverInReach");
         float currentShortestHideSpot = float.PositiveInfinity;
-        foreach (var possiblePosition in _hidePositions)
+        foreach (var possiblePosition in _AI.GetAllHideableObject())
         {
             float distanceToHideSpot = Vector3.Distance(possiblePosition.transform.position, _AI.transform.position);
             if (distanceToHideSpot <= _AI.HideRadius && distanceToHideSpot < currentShortestHideSpot)
@@ -26,8 +25,10 @@ public class BestCoverInReachNode : Node
             }
         }
         
+        Debug.Log(_AI.GetAllHideableObject().Count);
+        
         nodeState = currentShortestHideSpot < float.PositiveInfinity ? State.Success : State.Failure;
-        Debug.Log(nodeState);
+        Debug.Log("hideObejct was reassigned");
         return nodeState;
     }
 }

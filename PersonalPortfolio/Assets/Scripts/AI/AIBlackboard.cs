@@ -68,9 +68,13 @@ public class AIBlackboard : MonoBehaviour
         IsCoverReachableNode isCoverReachableNode = new IsCoverReachableNode(hidePositions, this);
         SequenceNode isCoverReachableSequence = new SequenceNode(new List<Node> {isCoverReachableNode, goToReachableCoverSequence});
         SelectorNode coverInReachSelector = new SelectorNode(new List<Node> {isCoverReachableSequence /* Attack here as well*/});
-        
+
+        ReassignCover reassignCoverNode = new ReassignCover(this);
         HidingFirstTimeNode hidingFirstTimeNode = new HidingFirstTimeNode(this);
-        SequenceNode isHidingFirstTimeSequence = new SequenceNode(new List<Node> {hidingFirstTimeNode, coverInReachSelector});
+
+        SelectorNode iDunno = new SelectorNode(new List<Node> {hidingFirstTimeNode, reassignCoverNode});
+        
+        SequenceNode isHidingFirstTimeSequence = new SequenceNode(new List<Node> {iDunno, coverInReachSelector});
         
         //CurrentlyCovered "Sequence"
         CurrentlyCovered currentlyCoveredNode = new CurrentlyCovered(this, _player.transform);
@@ -125,5 +129,15 @@ public class AIBlackboard : MonoBehaviour
         {
             hidePositions.Add(hideableObject);
         }
+    }
+
+    public void RemoveHideableObject(GameObject objectToRemove)
+    {
+        hidePositions.Remove(objectToRemove);
+    }
+
+    public List<GameObject> GetAllHideableObject()
+    {
+        return hidePositions;
     }
 }
