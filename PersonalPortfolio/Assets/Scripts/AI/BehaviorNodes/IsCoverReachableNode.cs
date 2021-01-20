@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 public class IsCoverReachableNode : Node
 {
-    private List<Transform> _hidePositions;
+    private List<GameObject> _hidePositions;
     private AIBlackboard _AI;
 
-    public IsCoverReachableNode(List<Transform> hidePositions, AIBlackboard AI)
+    public IsCoverReachableNode(List<GameObject> hidePositions, AIBlackboard AI)
     {
         _hidePositions = hidePositions;
         _AI = AI;
@@ -31,7 +31,7 @@ public class IsCoverReachableNode : Node
 
         foreach (var possiblePosition in _hidePositions)
         {
-            if (Vector3.Distance(possiblePosition.position, _AI.transform.position) <= _AI.HideRadius)
+            if (Vector3.Distance(possiblePosition.transform.position, _AI.transform.position) <= _AI.HideRadius)
             {
                 nodeState = State.Success;
                 return nodeState;

@@ -17,12 +17,13 @@ public class AIBlackboard : MonoBehaviour
     //Hide
     [SerializeField] private float hideRadius = 30.0f;
     public float HideRadius => hideRadius;
-    private List<Transform> hidePositions = new List<Transform>();
-    [HideInInspector] public Vector3 currentCoverSpot;
+    private List<GameObject> hidePositions = new List<GameObject>();
+    [HideInInspector] public GameObject currentCoverObject;
     [HideInInspector] public bool isCovered;
     [HideInInspector] public bool hidingFirstTime;
+    [HideInInspector] public float AngleToHideableObject = 0;
 
-    //Attack
+        //Attack
     [SerializeField] private float sightRadius = 5.0f;
     public float SightRadius => sightRadius;
     [SerializeField] private float shootInterval = 1.0f;
@@ -122,7 +123,7 @@ public class AIBlackboard : MonoBehaviour
     {
         foreach (var hideableObject in GameObject.FindGameObjectsWithTag("Hideable"))
         {
-            hidePositions.Add(hideableObject.transform);
+            hidePositions.Add(hideableObject);
         }
     }
 }

@@ -24,10 +24,9 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/BestCoverInReachNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/BestCoverInReachNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/HidingFirstTimeNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/HidingFirstTimeNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/GoToCover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/GoToCover.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/IsCoverReachableNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/IsCoverReachableNode.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/RepositionNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/RepositionNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,12 +64,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/CheckHealthNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/ChaseNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/AttackNode.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/GoToCover.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/IsCoverReachableNode.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/BestCoverInReachNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/HidingFirstTimeNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/BestCoverInReachNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/IsCoverReachableNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/RepositionNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/GoToCover.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mnHZUbqW4XZeyWog7mp9QjbNqw" />
@@ -127,7 +126,8 @@
       <workItem from="1610354069602" duration="6417000" />
       <workItem from="1610958691425" duration="18503000" />
       <workItem from="1611134881859" duration="9876000" />
-      <workItem from="1611147814526" duration="5978000" />
+      <workItem from="1611147814526" duration="6819000" />
+      <workItem from="1611159227136" duration="3170000" />
     </task>
     <servers />
   </component>

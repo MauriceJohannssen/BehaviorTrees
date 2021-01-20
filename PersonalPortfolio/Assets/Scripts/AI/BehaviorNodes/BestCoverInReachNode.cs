@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 public class BestCoverInReachNode : Node
 {
-    private List<Transform> _hidePositions;
+    private List<GameObject> _hidePositions;
     private AIBlackboard _AI;
 
-    public BestCoverInReachNode(List<Transform> hidePositions, AIBlackboard AI)
+    public BestCoverInReachNode(List<GameObject> hidePositions, AIBlackboard AI)
     {
         _hidePositions = hidePositions;
         _AI = AI;
@@ -18,10 +18,10 @@ public class BestCoverInReachNode : Node
         float currentShortestHideSpot = float.PositiveInfinity;
         foreach (var possiblePosition in _hidePositions)
         {
-            float distanceToHideSpot = Vector3.Distance(possiblePosition.position, _AI.transform.position);
+            float distanceToHideSpot = Vector3.Distance(possiblePosition.transform.position, _AI.transform.position);
             if (distanceToHideSpot <= _AI.HideRadius && distanceToHideSpot < currentShortestHideSpot)
             {
-                _AI.currentCoverSpot = possiblePosition.position;
+                _AI.currentCoverObject = possiblePosition;
                 currentShortestHideSpot = distanceToHideSpot;
             }
         }
