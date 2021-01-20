@@ -12,11 +12,14 @@
             <e p="AIBlackboard.cs" t="Include" />
             <e p="BehaviorNodes" t="Include">
               <e p="AttackNode.cs" t="Include" />
+              <e p="BestCoverInReachNode.cs" t="Include" />
               <e p="ChaseNode.cs" t="Include" />
               <e p="CheckHealthNode.cs" t="Include" />
-              <e p="CoverInReach.cs" t="Include" />
               <e p="CurrentlyCovered.cs" t="Include" />
               <e p="GoToCover.cs" t="Include" />
+              <e p="HidingFirstTimeNode.cs" t="Include" />
+              <e p="IsAtCoverNode.cs" t="Include" />
+              <e p="IsCoverReachableNode.cs" t="Include" />
               <e p="PlayerInReachNode.cs" t="Include" />
             </e>
             <e p="BehaviourTreeNodes" t="Include">

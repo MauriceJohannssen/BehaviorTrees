@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
 
-public class CoverInReach : Node
+public class BestCoverInReachNode : Node
 {
     private Transform[] _hidePositions;
     private AIBlackboard _AI;
-    private float testValue = 0;
 
-    public CoverInReach(Transform[] hidePositions, AIBlackboard AI)
+    public BestCoverInReachNode(Transform[] hidePositions, AIBlackboard AI)
     {
         _hidePositions = hidePositions;
         _AI = AI;
@@ -14,20 +13,10 @@ public class CoverInReach : Node
 
     public override State EvaluateState()
     {
-        if (_AI.AIstate == AIState.Hide)
-        {
-            //Evaluate better positions here!
-            //_AI.currentCoverSpot =_hidePositions[0].position + new Vector3(Mathf.Cos(testValue), 0, Mathf.Sin(testValue)) * 3;
-            //_AI.NavAgent.SetDestination(_AI.currentCoverSpot);
-            nodeState = State.Running;
-            Debug.Log("Readjust position in here");
-            return nodeState;
-        }
-        
+        Debug.Log("BestCoverInReach");
         float currentShortestHideSpot = float.PositiveInfinity;
         foreach (var possiblePosition in _hidePositions)
         {
-            Debug.Log("Position was evaluated");
             float distanceToHideSpot = Vector3.Distance(possiblePosition.position, _AI.transform.position);
             if (distanceToHideSpot <= _AI.HideRadius && distanceToHideSpot < currentShortestHideSpot)
             {
@@ -35,8 +24,9 @@ public class CoverInReach : Node
                 currentShortestHideSpot = distanceToHideSpot;
             }
         }
-
+        
         nodeState = currentShortestHideSpot < float.PositiveInfinity ? State.Success : State.Failure;
+        Debug.Log(nodeState);
         return nodeState;
     }
 }

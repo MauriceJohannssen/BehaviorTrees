@@ -17,6 +17,7 @@ public class CurrentlyCovered : Node
         {
             //If it hits something, it must be any but the player, since the player is being ignored
             _AI.isCovered = true;
+            //_AI.AIstate = AIState.Hidden;
             nodeState = State.Success;
             return nodeState;
         }
