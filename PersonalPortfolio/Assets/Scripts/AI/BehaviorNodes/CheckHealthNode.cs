@@ -11,8 +11,6 @@
 
     public override State EvaluateState()
     {
-        //nodeState = _AI.CurrentHealth >= _criticalHealthThreshold ? State.Failure : State.Success;
-
         if (_AI.CurrentHealth >= _criticalHealthThreshold)
         {
             nodeState = State.Failure;

@@ -1,4 +1,6 @@
-﻿public class IsAtCoverNode : Node
+﻿using UnityEngine;
+
+public class IsAtCoverNode : Node
 {
     private AIBlackboard _AI;
     
@@ -9,7 +11,8 @@
 
     public override State EvaluateState()
     {
-        nodeState = _AI.NavAgent.remainingDistance < 0.5f ? State.Success : State.Running;
+        nodeState = _AI.NavAgent.remainingDistance < 0.5f ? State.Success : State.Failure;
+        Debug.Log("IsAtCover is being executed!");
         return nodeState;
     }
 }

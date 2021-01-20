@@ -15,8 +15,7 @@ public class ChaseNode : Node
     {
         _AI.NavAgent.isStopped = false;
         _AI.NavAgent.SetDestination(_player.position);
-        _AI.AIstate = AIState.Chase;
-        
+
         //Can this even be a failure?
         nodeState = State.Success;
         return nodeState;

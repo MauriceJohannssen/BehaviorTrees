@@ -24,7 +24,6 @@ public class AttackNode : Node
         }
         
         _timeSinceLastShot += Time.deltaTime;
-        _AI.AIstate = AIState.Attack;
 
         //Can this even be a failure?
         nodeState = State.Success;

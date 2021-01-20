@@ -30,7 +30,6 @@ public class AIBlackboard : MonoBehaviour
 
     //NavAgent
     public NavMeshAgent NavAgent { get; private set; }
-    [HideInInspector] public AIState AIstate; //Do I really need this?
 
     //Player
     private GameObject _player;
@@ -51,38 +50,30 @@ public class AIBlackboard : MonoBehaviour
 
     private void CreateBehaviorTree()
     {
+        //Health=======================================================================================================
+        //Reposition sequence
+        
         //Reposition
+        RepositionNode repositionNode = new RepositionNode();
         IsAtCoverNode isAtCoverNode = new IsAtCoverNode(this);
-
-        SequenceNode repositionSequence = new SequenceNode(new List<Node> {isAtCoverNode});
-
-
-        //HidingFirstTime Sequence
+        //RepositionNode placed here
+        SequenceNode repositionSequence = new SequenceNode(new List<Node> {isAtCoverNode, new InverterNode(repositionNode)});
+        
+        //IsHidingFirstTime sequence
         GoToCover goToCoverNode = new GoToCover(this);
         BestCoverInReachNode bestCoverInReachNode = new BestCoverInReachNode(hidePositions, this);
-        SequenceNode goToReachableCoverSequence =
-            new SequenceNode(new List<Node> {bestCoverInReachNode, goToCoverNode});
-        HidingFirstTimeNode hidingFirstTimeNode = new HidingFirstTimeNode(this);
-        SequenceNode isHidingFirstTimeSequence =
-            new SequenceNode(new List<Node> {hidingFirstTimeNode, goToReachableCoverSequence});
-
-
-        SelectorNode hideFirstTimeSelector =
-            new SelectorNode(new List<Node> {isHidingFirstTimeSequence, repositionSequence});
-
+        SequenceNode goToReachableCoverSequence = new SequenceNode(new List<Node> {bestCoverInReachNode, goToCoverNode});
         IsCoverReachableNode isCoverReachableNode = new IsCoverReachableNode(hidePositions, this);
-
-        SequenceNode isCoverReachableSequence =
-            new SequenceNode(new List<Node> {isCoverReachableNode, hideFirstTimeSelector});
-
-        //Attack node here
-
-        //Done until here
-        SelectorNode coverInReachSelector = new SelectorNode(new List<Node> {isCoverReachableSequence});
-
+        SequenceNode isCoverReachableSequence = new SequenceNode(new List<Node> {isCoverReachableNode, goToReachableCoverSequence});
+        SelectorNode coverInReachSelector = new SelectorNode(new List<Node> {isCoverReachableSequence /* Attack here as well*/});
+        
+        HidingFirstTimeNode hidingFirstTimeNode = new HidingFirstTimeNode(this);
+        SequenceNode isHidingFirstTimeSequence = new SequenceNode(new List<Node> {hidingFirstTimeNode, coverInReachSelector});
+        
+        //CurrentlyCovered "Sequence"
         CurrentlyCovered currentlyCoveredNode = new CurrentlyCovered(this, _player.transform);
 
-        SelectorNode coverSelector = new SelectorNode(new List<Node> {currentlyCoveredNode, coverInReachSelector});
+        SelectorNode coverSelector = new SelectorNode(new List<Node> {currentlyCoveredNode, isHidingFirstTimeSequence, new InverterNode(repositionSequence)});
 
         CheckHealthNode checkHealthNode = new CheckHealthNode(this, criticalHealthThreshold);
         SequenceNode healthSequenceNode = new SequenceNode(new List<Node> {checkHealthNode, coverSelector});
@@ -124,15 +115,5 @@ public class AIBlackboard : MonoBehaviour
         isCovered = false;
         _mainNode.EvaluateState();
         RegenerateHealth();
-        //Debug.Log("Current state is " + AIstate);
     }
-}
-
-public enum AIState
-{
-    Hide,
-    Hidden,
-    Reposition,
-    Attack,
-    Chase
 }

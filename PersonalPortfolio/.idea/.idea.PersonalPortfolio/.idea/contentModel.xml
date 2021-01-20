@@ -21,6 +21,7 @@
               <e p="IsAtCoverNode.cs" t="Include" />
               <e p="IsCoverReachableNode.cs" t="Include" />
               <e p="PlayerInReachNode.cs" t="Include" />
+              <e p="RepositionNode.cs" t="Include" />
             </e>
             <e p="BehaviourTreeNodes" t="Include">
               <e p="InverterNode.cs" t="Include" />

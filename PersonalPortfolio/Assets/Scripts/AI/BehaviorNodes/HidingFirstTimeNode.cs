@@ -22,7 +22,6 @@ public class HidingFirstTimeNode : Node
             nodeState = State.Failure;
         }
 
-        Debug.Log("Hiding first time was: " + nodeState);
         return nodeState;
     }
 }
