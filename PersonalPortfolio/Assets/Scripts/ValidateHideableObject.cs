@@ -30,13 +30,13 @@ public class ValidateHideableObject : MonoBehaviour
     private Vector3 CalculateHighestPoint()
     {
         Vector3 currentHighestVertex = Vector3.zero;
-
+        
         foreach (var vertex in _mesh.vertices)
         {
             if(vertex.y > currentHighestVertex.y) currentHighestVertex = vertex;
         }
         
-        Debug.Log(transform.TransformPoint(currentHighestVertex).y);
+        //Debug.Log(transform.TransformPoint(currentHighestVertex).y);
         return transform.TransformPoint(currentHighestVertex);
     }
 }

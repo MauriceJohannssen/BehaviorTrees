@@ -16,18 +16,23 @@ public class GoToCover : Node
         float angle = Vector3.Angle(objectRight, objectCenterToPlayer);
         
         float cross = Vector3.Cross(objectRight, objectCenterToPlayer).y;
-        if (cross < 0) angle = 360 - angle;
-        
-        Debug.Log("Angle was " + angle);
+        if (cross < 0.0f)
+        {
+            angle = 360.0f - angle;
+        }
 
-        angle *= Mathf.PI / 180;
-        _AI.AngleToHideableObject = angle;
-        Vector3 bestPosition = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * (4 + Random.Range(0.0f, 0.75f));
+        float finalAngle = 180 - angle;
+        
+        Debug.Log("Angle was " + finalAngle);
+
+        finalAngle *= Mathf.Deg2Rad;
+        _AI.AngleToHideableObject = finalAngle;
+        Vector3 bestPosition = new Vector3(Mathf.Cos(finalAngle), 0, Mathf.Sin(finalAngle)) * 4; /* * (4 + Random.Range(0.0f, 0.75f)); */
         
         _AI.NavAgent.destination = _AI.currentCoverObject.transform.position + bestPosition;
         _AI.NavAgent.isStopped = false;
         //Can is even be false?
         nodeState = State.Success;
         return nodeState;
-    }
+    }   
 }

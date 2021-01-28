@@ -19,8 +19,9 @@ public class RepositionNode : Node
         
         _AI.AngleToHideableObject += resultingCrossVec.y <= 0 ? -0.2f : 0.2f;
         
-        float radius = 4.0f;
-        _AI.NavAgent.destination = _AI.currentCoverObject.transform.position + (new Vector3(Mathf.Cos( _AI.AngleToHideableObject), 0, Mathf.Sin( _AI.AngleToHideableObject)) * (radius + Random.Range(0.0f,0.75f)));
+        _AI.NavAgent.destination = _AI.currentCoverObject.transform.position +
+                                   new Vector3(Mathf.Cos(_AI.AngleToHideableObject), 0,
+                                       Mathf.Sin(_AI.AngleToHideableObject)) * 4;// * (radius + Random.Range(0.0f,0.75f));
         return State.Running;
     }
 }

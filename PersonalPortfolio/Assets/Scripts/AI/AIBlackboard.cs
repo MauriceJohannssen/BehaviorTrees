@@ -18,7 +18,7 @@ public class AIBlackboard : MonoBehaviour
     [SerializeField] private float hideRadius = 30.0f;
     public float HideRadius => hideRadius;
     private List<GameObject> hidePositions = new List<GameObject>();
-    [HideInInspector] public GameObject currentCoverObject;
+    public GameObject currentCoverObject;
     [HideInInspector] public bool isCovered;
     [HideInInspector] public bool hidingFirstTime;
     [HideInInspector] public float AngleToHideableObject = 0;
