@@ -34,11 +34,9 @@ public class IsCoverReachableNode : Node
             if (Vector3.Distance(possiblePosition.transform.position, _AI.transform.position) <= _AI.HideRadius)
             {
                 nodeState = State.Success;
-                return nodeState;
             }
+            else nodeState = State.Failure;
         }
-
-        nodeState = State.Failure;
         return nodeState;
     }
 }

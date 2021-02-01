@@ -9,21 +9,32 @@ public class AIBlackboard : MonoBehaviour
     //Health
     [SerializeField] private float initialHealth = 100.0f;
     [SerializeField] private float healRatePerSecond = 5.0f;
-    private float _healTimer = 0;
+    [SerializeField] private float criticalHealthThreshold = 20.0f;
+    private float _healTimer;
     private float _currentHealth;
     public float CurrentHealth => _currentHealth;
-    [SerializeField] private float criticalHealthThreshold = 20.0f;
 
     //Hide
     [SerializeField] private float hideRadius = 30.0f;
     public float HideRadius => hideRadius;
-    private List<GameObject> hidePositions = new List<GameObject>();
-    public GameObject currentCoverObject;
+    private List<GameObject> _hidePositions;
+
+    private GameObject _currentCoverObject;
+    public GameObject CurrentCoverObject
+    {
+        get => _currentCoverObject;
+        set
+        {
+            if (value.tag.Equals("Hideable")) _currentCoverObject = value;
+            else Debug.LogError("You tried to set a non-hideable object as object to cover!");
+        }
+    }
+
     [HideInInspector] public bool isCovered;
     [HideInInspector] public bool hidingFirstTime;
-    [HideInInspector] public float AngleToHideableObject = 0;
+    [HideInInspector] public float angleToHideableObject;
 
-        //Attack
+    //Attack
     [SerializeField] private float sightRadius = 5.0f;
     public float SightRadius => sightRadius;
     [SerializeField] private float shootInterval = 1.0f;
@@ -35,18 +46,19 @@ public class AIBlackboard : MonoBehaviour
     //Player
     private GameObject _player;
     public GameObject Player => _player;
+    
+    //Boss
+    private GameObject _boss;
 
     //Root node
     private SelectorNode _mainNode;
 
     private void Start()
     {
-        hidingFirstTime = true;
-        _currentHealth = initialHealth;
+        InitializeVariables();
         GetAllHideables();
-        NavAgent = GetComponent<NavMeshAgent>();
-        NavAgent.isStopped = true;
-        _player = GameObject.FindWithTag("Player");
+        FindBoss();
+        FindPlayer();
         CreateBehaviorTree();
     }
 
@@ -63,26 +75,27 @@ public class AIBlackboard : MonoBehaviour
         
         //IsHidingFirstTime sequence
         GoToCover goToCoverNode = new GoToCover(this);
-        BestCoverInReachNode bestCoverInReachNode = new BestCoverInReachNode(hidePositions, this);
+        BestCoverInReachNode bestCoverInReachNode = new BestCoverInReachNode(_hidePositions, this);
         SequenceNode goToReachableCoverSequence = new SequenceNode(new List<Node> {bestCoverInReachNode, goToCoverNode});
-        IsCoverReachableNode isCoverReachableNode = new IsCoverReachableNode(hidePositions, this);
+        IsCoverReachableNode isCoverReachableNode = new IsCoverReachableNode(_hidePositions, this);
         SequenceNode isCoverReachableSequence = new SequenceNode(new List<Node> {isCoverReachableNode, goToReachableCoverSequence});
-        SelectorNode coverInReachSelector = new SelectorNode(new List<Node> {isCoverReachableSequence /* Attack here as well*/});
 
-        ReassignCover reassignCoverNode = new ReassignCover(this);
+        CurrentCoverValid currentCoverValidNode = new CurrentCoverValid(this);
         HidingFirstTimeNode hidingFirstTimeNode = new HidingFirstTimeNode(this);
 
-        SelectorNode iDunno = new SelectorNode(new List<Node> {hidingFirstTimeNode, reassignCoverNode});
+        SelectorNode iDunno = new SelectorNode(new List<Node> {hidingFirstTimeNode, new InverterNode(currentCoverValidNode)});
         
-        SequenceNode isHidingFirstTimeSequence = new SequenceNode(new List<Node> {iDunno, coverInReachSelector});
+        SequenceNode isHidingFirstTimeSequence = new SequenceNode(new List<Node> {iDunno, isCoverReachableSequence});
         
         //CurrentlyCovered "Sequence"
         CurrentlyCovered currentlyCoveredNode = new CurrentlyCovered(this, _player.transform);
 
         SelectorNode coverSelector = new SelectorNode(new List<Node> {currentlyCoveredNode, isHidingFirstTimeSequence, new InverterNode(repositionSequence)});
 
+        IsValidCoverLeftNode isValidCoverLeftNode = new IsValidCoverLeftNode(this);
+        
         CheckHealthNode checkHealthNode = new CheckHealthNode(this, criticalHealthThreshold);
-        SequenceNode healthSequenceNode = new SequenceNode(new List<Node> {checkHealthNode, coverSelector});
+        SequenceNode healthSequenceNode = new SequenceNode(new List<Node> {checkHealthNode, isValidCoverLeftNode, coverSelector});
 
         //Attack=======================================================================================================
         AttackNode attackNode = new AttackNode(this, _player.transform);
@@ -127,17 +140,36 @@ public class AIBlackboard : MonoBehaviour
     {
         foreach (var hideableObject in GameObject.FindGameObjectsWithTag("Hideable"))
         {
-            hidePositions.Add(hideableObject);
+            _hidePositions.Add(hideableObject);
         }
     }
 
     public void RemoveHideableObject(GameObject objectToRemove)
     {
-        hidePositions.Remove(objectToRemove);
+        _hidePositions.Remove(objectToRemove);
     }
 
     public List<GameObject> GetAllHideableObject()
     {
-        return hidePositions;
+        return _hidePositions;
+    }
+
+    private void FindBoss()
+    {
+        _boss = GameObject.FindWithTag("Boss");
+    }
+
+    private void FindPlayer()
+    {
+        _player = GameObject.FindWithTag("Player");
+    }
+
+    private void InitializeVariables()
+    {
+        _hidePositions = new List<GameObject>();
+        hidingFirstTime = true;
+        _currentHealth = initialHealth;
+        NavAgent = GetComponent<NavMeshAgent>();
+        NavAgent.isStopped = true;
     }
 }

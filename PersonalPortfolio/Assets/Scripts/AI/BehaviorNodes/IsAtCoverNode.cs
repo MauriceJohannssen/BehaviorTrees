@@ -12,7 +12,6 @@ public class IsAtCoverNode : Node
     public override State EvaluateState()
     {
         nodeState = _AI.NavAgent.remainingDistance < 0.5f ? State.Success : State.Failure;
-        Debug.Log("IsAtCover is being executed!");
         return nodeState;
     }
 }

@@ -20,7 +20,7 @@ public class BestCoverInReachNode : Node
             float distanceToHideSpot = Vector3.Distance(possiblePosition.transform.position, _AI.transform.position);
             if (distanceToHideSpot <= _AI.HideRadius && distanceToHideSpot < currentShortestHideSpot)
             {
-                _AI.currentCoverObject = possiblePosition;
+                _AI.CurrentCoverObject = possiblePosition;
                 currentShortestHideSpot = distanceToHideSpot;
             }
         }

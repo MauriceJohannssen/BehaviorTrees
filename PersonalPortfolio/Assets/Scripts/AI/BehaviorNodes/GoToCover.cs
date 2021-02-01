@@ -11,8 +11,8 @@ public class GoToCover : Node
 
     public override State EvaluateState()
     {
-        Vector3 objectRight = _AI.currentCoverObject.transform.right;
-        Vector3 objectCenterToPlayer = Vector3.Normalize(_AI.Player.transform.position - _AI.currentCoverObject.transform.position);
+        Vector3 objectRight = _AI.CurrentCoverObject.transform.right;
+        Vector3 objectCenterToPlayer = Vector3.Normalize(_AI.Player.transform.position - _AI.CurrentCoverObject.transform.position);
         float angle = Vector3.Angle(objectRight, objectCenterToPlayer);
         
         float cross = Vector3.Cross(objectRight, objectCenterToPlayer).y;
@@ -26,10 +26,10 @@ public class GoToCover : Node
         Debug.Log("Angle was " + finalAngle);
 
         finalAngle *= Mathf.Deg2Rad;
-        _AI.AngleToHideableObject = finalAngle;
+        _AI.angleToHideableObject = finalAngle;
         Vector3 bestPosition = new Vector3(Mathf.Cos(finalAngle), 0, Mathf.Sin(finalAngle)) * 4; /* * (4 + Random.Range(0.0f, 0.75f)); */
         
-        _AI.NavAgent.destination = _AI.currentCoverObject.transform.position + bestPosition;
+        _AI.NavAgent.destination = _AI.CurrentCoverObject.transform.position + bestPosition;
         _AI.NavAgent.isStopped = false;
         //Can is even be false?
         nodeState = State.Success;
