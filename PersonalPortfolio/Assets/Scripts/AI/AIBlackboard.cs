@@ -49,6 +49,7 @@ public class AIBlackboard : MonoBehaviour
     
     //Boss
     private GameObject _boss;
+    public bool walkingToBoss = false;
 
     //Root node
     private SelectorNode _mainNode;
@@ -64,6 +65,16 @@ public class AIBlackboard : MonoBehaviour
 
     private void CreateBehaviorTree()
     {
+        //Boss=========================================================================================================
+        GoingToBossNode goingToBossNode = new GoingToBossNode(this);
+        
+        IsInRange isBossInRangeNode = new IsInRange(this);
+        GoToBoss goToBossNode = new GoToBoss(this);
+        
+        SequenceNode followBossSequence = new SequenceNode(new List<Node>{new InverterNode(isBossInRangeNode), goToBossNode});
+
+        SelectorNode currentBossBehaviour = new SelectorNode(new List<Node> {goingToBossNode, followBossSequence});
+        
         //Health=======================================================================================================
         //Reposition sequence
         
@@ -107,7 +118,7 @@ public class AIBlackboard : MonoBehaviour
         SequenceNode chasePlayerSequence = new SequenceNode(new List<Node> {chaseNode});
 
         //Main=========================================================================================================
-        _mainNode = new SelectorNode(new List<Node> {healthSequenceNode, attackSequenceNode, chasePlayerSequence});
+        _mainNode = new SelectorNode(new List<Node> {healthSequenceNode, currentBossBehaviour, attackSequenceNode, chasePlayerSequence});
     }
 
     public void ReduceHealth(float damage)
@@ -157,6 +168,11 @@ public class AIBlackboard : MonoBehaviour
     private void FindBoss()
     {
         _boss = GameObject.FindWithTag("Boss");
+    }
+
+    public GameObject GetBoss()
+    {
+        return _boss;
     }
 
     private void FindPlayer()

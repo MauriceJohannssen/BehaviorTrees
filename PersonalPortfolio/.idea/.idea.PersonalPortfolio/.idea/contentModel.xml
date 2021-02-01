@@ -17,10 +17,13 @@
               <e p="CheckHealthNode.cs" t="Include" />
               <e p="CurrentCoverValid.cs" t="Include" />
               <e p="CurrentlyCovered.cs" t="Include" />
+              <e p="GoingToBossNode.cs" t="Include" />
+              <e p="GoToBoss.cs" t="Include" />
               <e p="GoToCover.cs" t="Include" />
               <e p="HidingFirstTimeNode.cs" t="Include" />
               <e p="IsAtCoverNode.cs" t="Include" />
               <e p="IsCoverReachableNode.cs" t="Include" />
+              <e p="IsInRange.cs" t="Include" />
               <e p="IsValidCoverLeftNode.cs" t="Include" />
               <e p="PlayerInReachNode.cs" t="Include" />
               <e p="RepositionNode.cs" t="Include" />
@@ -31,6 +34,7 @@
               <e p="SelectorNode.cs" t="Include" />
               <e p="SequenceNode.cs" t="Include" />
             </e>
+            <e p="Patrol.cs" t="Include" />
           </e>
           <e p="Bullet.cs" t="Include" />
           <e p="CameraController.cs" t="Include" />
