@@ -3,26 +3,21 @@
 public class CurrentlyCovered : Node
 {
     private AIBlackboard _AI;
-    private Transform _player;
 
-    public CurrentlyCovered(AIBlackboard AI, Transform player)
+    public CurrentlyCovered(AIBlackboard AI)
     {
         _AI = AI;
-        _player = player;
     }
 
     public override State EvaluateState()
     {
-        if (Physics.Linecast(_AI.transform.position, _player.transform.position))
+        if (Physics.Linecast(_AI.transform.position, _AI.Player.transform.position))
         {
             //If it hits something, it must be any but the player, since the player is being ignored
             _AI.isCovered = true;
-            //_AI.AIstate = AIState.Hidden;
             nodeState = State.Success;
-            return nodeState;
         }
-
-        nodeState = State.Failure;
+        else nodeState = State.Failure;
         return nodeState;
     }
 }

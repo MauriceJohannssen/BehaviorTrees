@@ -11,7 +11,7 @@ public class IsInRange : Node
 
     public override State EvaluateState()
     {
-        nodeState = (_AI.GetBoss().transform.position - _AI.transform.position).magnitude <= 1250.0f
+        nodeState = (_AI.GetBoss().transform.position - _AI.transform.position).magnitude <= _AI.MaximumDistanceToBoss
             ? State.Success
             : State.Failure;
         

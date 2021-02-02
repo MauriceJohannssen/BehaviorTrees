@@ -25,10 +25,7 @@ public class BestCoverInReachNode : Node
             }
         }
         
-        Debug.Log(_AI.GetAllHideableObject().Count);
-        
         nodeState = currentShortestHideSpot < float.PositiveInfinity ? State.Success : State.Failure;
-        Debug.Log("hideObejct was reassigned");
         return nodeState;
     }
 }

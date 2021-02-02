@@ -20,15 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8aa3e50-203a-4dcd-8529-8e48c5a46d4e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/ChaseNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/ChaseNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/GoToBoss.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/GoToBoss.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/GoToCover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/GoToCover.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/IsInRange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/IsInRange.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/PlayerInReachNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/PlayerInReachNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/HDRPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/HDRPProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Boss/IsInRange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Boss/IsInRange.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/PlayerCloseProximityNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/PlayerCloseProximityNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/RotateToFindPlayerNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/RotateToFindPlayerNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/BestCoverInReachNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/BestCoverInReachNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/CurrentlyCovered.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/CurrentlyCovered.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/GoToCover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/GoToCover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/RepositionNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/RepositionNode.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,19 +47,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/GoToBoss.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/CurrentlyCovered.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/HidingFirstTimeNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/CurrentCoverValid.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/GoToCover.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/RotateToFindPlayerNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/PlayerInReachNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/ChaseNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/PatrolNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/AttackNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Mauri/GitHub/PersonalPortfolio/PersonalPortfolio/Assets/Scripts/AI/BehaviorNodes/PlayerInSight.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/PlayerCloseProximityNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/IsAtCoverNode.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -89,8 +77,15 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/RotateToFindPlayerNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/ChaseNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/PatrolNode.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/GoToCover.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/RepositionNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Boss/IsInRange.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/CurrentlyCovered.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/GoToCover.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/BestCoverInReachNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/PlayerCloseProximityNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/RotateToFindPlayerNode.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mnHZUbqW4XZeyWog7mp9QjbNqw" />
@@ -154,7 +149,7 @@
       <workItem from="1612181010762" duration="4806000" />
       <workItem from="1612204107569" duration="3257000" />
       <workItem from="1612214420634" duration="5842000" />
-      <workItem from="1612259669536" duration="12220000" />
+      <workItem from="1612259669536" duration="17959000" />
     </task>
     <servers />
   </component>

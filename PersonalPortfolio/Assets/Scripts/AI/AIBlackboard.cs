@@ -8,14 +8,16 @@ using UnityEngine.AI;
 public class AIBlackboard : MonoBehaviour
 {
     //Health
+    [Header("Health")]
     [SerializeField] private float initialHealth = 100.0f;
     [SerializeField] private float healRatePerSecond = 5.0f;
     [SerializeField] private float criticalHealthThreshold = 20.0f;
     private float _healTimer;
     private float _currentHealth;
     public float CurrentHealth => _currentHealth;
-
+    
     //Hide
+    [Header("Hiding")]
     [SerializeField] private float hideRadius = 30.0f;
     public float HideRadius => hideRadius;
     private List<GameObject> _hidePositions;
@@ -36,6 +38,7 @@ public class AIBlackboard : MonoBehaviour
     [HideInInspector] public float angleToHideableObject;
 
     //Attack
+    [Header("Attack")]
     [SerializeField] private float shootRadius = 5.0f;
     public float ShootRadius => shootRadius;
     [SerializeField] private float shootInterval = 1.0f;
@@ -43,19 +46,25 @@ public class AIBlackboard : MonoBehaviour
 
     //NavAgent
     public NavMeshAgent NavAgent { get; private set; }
+    
+    //Chase
+    [Header("Chase")]
+    public float SightRangeAngle = 70.0f;
+    public float SightRadius = 30.0f;
+    public float NoticableProximity = 3.0f;
+    public float LookOutForPlayerTime = 10.0f;
+    [HideInInspector]public bool SawPlayer = false;
 
     //Player
     private GameObject _player;
     public GameObject Player => _player;
     [HideInInspector]public Vector3 LastKnownPosition;
-    public float SightRangeAngle = 70.0f;
-    public float SightRadius = 30.0f;
-    public float NoticableProximity = 3.0f;
-    public bool SawPlayer = false;
 
     //Boss
     private GameObject _boss;
-    public bool walkingToBoss = false;
+    [HideInInspector]public bool walkingToBoss = false;
+    [Header("Boss")] 
+    public float MaximumDistanceToBoss = 50.0f;
 
     //Root node
     private SelectorNode _mainNode;
@@ -105,7 +114,7 @@ public class AIBlackboard : MonoBehaviour
         SequenceNode isHidingFirstTimeSequence = new SequenceNode(new List<Node> {iDunno, isCoverReachableSequence});
         
         //CurrentlyCovered "Sequence"
-        CurrentlyCovered currentlyCoveredNode = new CurrentlyCovered(this, _player.transform);
+        CurrentlyCovered currentlyCoveredNode = new CurrentlyCovered(this);
 
         SelectorNode coverSelector = new SelectorNode(new List<Node> {currentlyCoveredNode, isHidingFirstTimeSequence, new InverterNode(repositionSequence)});
 
@@ -138,7 +147,8 @@ public class AIBlackboard : MonoBehaviour
         PatrolNode patrolNode = new PatrolNode(this);
 
         //Main=========================================================================================================
-        _mainNode = new SelectorNode(new List<Node> {healthSequenceNode, currentBossBehaviour, attackSequenceNode, chaseActionSelector, patrolNode});
+        //_mainNode = new SelectorNode(new List<Node> {healthSequenceNode, currentBossBehaviour, attackSequenceNode, chaseActionSelector, patrolNode});
+        _mainNode = new SelectorNode(new List<Node> {chaseActionSelector});
     }
 
     public void ReduceHealth(float damage)
