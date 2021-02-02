@@ -110,15 +110,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialHealth: 100
-  healRatePerSecond: 0.01
-  criticalHealthThreshold: 20
-  hideRadius: 100
-  currentCoverObject: {fileID: 0}
+  healRatePerSecond: 10
+  criticalHealthThreshold: 30
+  hideRadius: 50
   isCovered: 0
   hidingFirstTime: 0
-  AngleToHideableObject: 0
-  sightRadius: 10
+  angleToHideableObject: 0
+  shootRadius: 15
   shootInterval: 0.25
+  SightRangeAngle: 60
+  SightRadius: 30
+  NoticableProximity: 12.5
+  LookOutForPlayerTime: 15
+  SawPlayer: 0
+  WasShot: 0
+  LastKnownPosition: {x: 0, y: 0, z: 0}
+  walkingToBoss: 0
+  MaximumDistanceToBoss: 50
 --- !u!195 &8563712133614757303
 NavMeshAgent:
   m_ObjectHideFlags: 0

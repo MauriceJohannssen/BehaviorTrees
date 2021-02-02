@@ -25,6 +25,7 @@
                 <e p="ChaseNode.cs" t="Include" />
                 <e p="PlayerCloseProximityNode.cs" t="Include" />
                 <e p="RotateToFindPlayerNode.cs" t="Include" />
+                <e p="WasShotNode.cs" t="Include" />
               </e>
               <e p="Health" t="Include">
                 <e p="BestCoverInReachNode.cs" t="Include" />

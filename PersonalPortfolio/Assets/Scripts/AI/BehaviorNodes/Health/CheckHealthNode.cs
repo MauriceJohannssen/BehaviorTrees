@@ -1,4 +1,8 @@
-﻿public class CheckHealthNode : Node
+﻿using System.IO.Compression;
+using UnityEngine;
+using UnityEngine.Rendering.HighDefinition;
+
+public class CheckHealthNode : Node
 {
     private AIBlackboard _AI;
     private float _criticalHealthThreshold;
@@ -11,12 +15,20 @@
 
     public override State EvaluateState()
     {
-        if (_AI.CurrentHealth >= _criticalHealthThreshold)
+        if (_AI.hidingFirstTime)
         {
-            nodeState = State.Failure;
-            _AI.hidingFirstTime = true;
+            if (_AI.CurrentHealth <= _criticalHealthThreshold) nodeState = State.Success;
         }
-        else nodeState = State.Success;
+        else
+        {
+            if (_AI.CurrentHealth < _AI.initialHealth) nodeState = State.Success;
+            else
+            {
+                _AI.hidingFirstTime = true;
+                nodeState = State.Failure;
+            }
+        }
+
         return nodeState;
     }
 }

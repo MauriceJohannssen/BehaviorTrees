@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float BulletDamage = 30.0f;
+    public float BulletDamage = 10.0f;
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag.Equals("Enemy"))
         {
-            other.gameObject.GetComponent<AIBlackboard>().ReduceHealth(BulletDamage);
+            AIBlackboard aiBlackboard = other.gameObject.GetComponent<AIBlackboard>();
+            if(aiBlackboard != null) aiBlackboard.ReduceHealth(BulletDamage);
         }
     }
 }

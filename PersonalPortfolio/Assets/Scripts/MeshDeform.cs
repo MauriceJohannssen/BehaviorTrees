@@ -87,38 +87,28 @@ public class MeshDeform : MonoBehaviour
         }
         objectMesh.SetVertices(_hitObjectVertices);
         hitGameObject.AddComponent<MeshCollider>().convex = true;
+        objectMesh.RecalculateBounds();
         objectMesh.RecalculateNormals();
+        objectMesh.RecalculateTangents();
         }
     }
     void OnCollisionEnter(Collision hitGameObject){
         //Check if it's a valid object
-        if(!hitGameObject.transform.tag.Equals("Deformable")) return;
+        if(!hitGameObject.transform.tag.Equals("Hideable")) return;
         //Check if this script was already executed once
         if(_alreadyExecuted) return;
         _alreadyExecuted = true;
 
         //Get first (and only) collision point
         ContactPoint contactPoint = hitGameObject.GetContact(0);
-        _entryPoint = transform.TransformPoint(contactPoint.point);
+        _entryPoint = contactPoint.point;
         
-        //Approach 1
-        //Get collision game object
-        //_hitGameObjects.Add(hitGameObject.collider.gameObject);
-        // AttachedBodies attachedBodies = hitGameObject.collider.transform.GetComponent<AttachedBodies>();
-        // if(attachedBodies != null){
-        //     foreach(GameObject attachedBody in attachedBodies.attachedGameObjects){
-        //     _hitGameObjects.Add(attachedBody);
-        //     }
-        // }
-
-
-        //Approach 2
         //if(overlapCollision < 2) {
             Collider[] hitColliders = Physics.OverlapSphere(_entryPoint, radius);
             
             foreach(Collider collider in hitColliders)
             {
-                 if(!collider.transform.tag.Equals("Deformable")) {continue; }  
+                 if(!collider.transform.tag.Equals("Hideable")) {continue; }  
                  _hitGameObjects.Add(collider.gameObject);
                  overlapCollision++;     
             }

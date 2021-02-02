@@ -1,6 +1,4 @@
-﻿using System.Timers;
-using UnityEngine;
-using UnityEngine.AI;
+﻿using UnityEngine;
 
 public class RotateToFindPlayerNode : Node
 {
@@ -22,7 +20,7 @@ public class RotateToFindPlayerNode : Node
         if (_AI.SawPlayer)
         {
             if (_AI.NavAgent.remainingDistance >= 0.5f) nodeState = State.Running;
-            else if (_lookOutForPlayerTime > 0 && _AI.NavAgent.remainingDistance <= 0.5f)
+            else if (_lookOutForPlayerTime > 0)
             {
                 if (_currentMovementTime <= 2.0f)
                 {
@@ -39,8 +37,8 @@ public class RotateToFindPlayerNode : Node
                     _currentMovementTime = 0;
                     _rotationSpeed = Random.Range(-130.0f, 130.0f);
                 }
-                
-                
+
+
                 _lookOutForPlayerTime -= Time.deltaTime;
                 nodeState = State.Running;
             }
@@ -51,6 +49,7 @@ public class RotateToFindPlayerNode : Node
                 nodeState = State.Failure;
             }
         }
+        else nodeState = State.Failure;
 
         return nodeState;
     }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using NUnit.Framework;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,9 +6,9 @@ public class AIBlackboard : MonoBehaviour
 {
     //Health
     [Header("Health")]
-    [SerializeField] private float initialHealth = 100.0f;
+    [SerializeField] public float initialHealth = 100.0f;
     [SerializeField] private float healRatePerSecond = 5.0f;
-    [SerializeField] private float criticalHealthThreshold = 20.0f;
+    [SerializeField] private float criticalHealthThreshold = 40.0f;
     private float _healTimer;
     private float _currentHealth;
     public float CurrentHealth => _currentHealth;
@@ -54,6 +51,7 @@ public class AIBlackboard : MonoBehaviour
     public float NoticableProximity = 3.0f;
     public float LookOutForPlayerTime = 10.0f;
     [HideInInspector]public bool SawPlayer = false;
+    public bool WasShot = false;
 
     //Player
     private GameObject _player;
@@ -68,7 +66,7 @@ public class AIBlackboard : MonoBehaviour
 
     //Root node
     private SelectorNode _mainNode;
-
+    
     private void Start()
     {
         InitializeVariables();
@@ -131,12 +129,12 @@ public class AIBlackboard : MonoBehaviour
         SequenceNode attackSequenceNode = new SequenceNode(new List<Node> {playerInSightSequenceNode, attackNode});
 
         //Chase========================================================================================================
-        ChaseNode chaseNode = new ChaseNode(this, _player.transform);
+        ChaseNode chaseNode = new ChaseNode(this);
         PlayerCloseProximityNode playerCloseProximityNode = new PlayerCloseProximityNode(this);
-        SelectorNode playerIntelSelector = new SelectorNode(new List<Node>() {playerInSight, playerCloseProximityNode});
+        WasShotNode wasShotNode = new WasShotNode(this);
+        SelectorNode playerIntelSelector = new SelectorNode(new List<Node>() {playerInSight, playerCloseProximityNode, wasShotNode});
 
         RotateToFindPlayerNode rotateToFindPlayerNode = new RotateToFindPlayerNode(this);
-        //SequenceNode checkForPlayer = new SequenceNode(new List<Node>(){})
 
         SequenceNode chasePlayerSequence = new SequenceNode(new List<Node> {playerIntelSelector, chaseNode});
 
@@ -148,9 +146,11 @@ public class AIBlackboard : MonoBehaviour
 
         //Main=========================================================================================================
         //_mainNode = new SelectorNode(new List<Node> {healthSequenceNode, currentBossBehaviour, attackSequenceNode, chaseActionSelector, patrolNode});
-        _mainNode = new SelectorNode(new List<Node> {chaseActionSelector});
+        _mainNode = new SelectorNode(new List<Node> {healthSequenceNode, attackSequenceNode, chaseActionSelector, patrolNode});
     }
 
+    
+    //This is not even supposed to be here but in a node lol
     public void ReduceHealth(float damage)
     {
         if (damage < 0) return;
@@ -170,12 +170,25 @@ public class AIBlackboard : MonoBehaviour
         }
     }
 
+    private void CheckForDeath()
+    {
+        if (CurrentHealth <= 0)
+        {
+            Destroy(NavAgent);
+            gameObject.AddComponent<Rigidbody>();//.velocity = receivedBulletVelocity;
+            Destroy(this);
+        }
+    }
+
     private void Update()
     {
         isCovered = false;
         _mainNode.EvaluateState();
         RegenerateHealth();
         ShowDebugInfo();
+        CheckForDeath();
+        WasShot = false;
+        Debug.Log("Health is " + CurrentHealth);
     }
 
     private void GetAllHideables()
@@ -226,5 +239,10 @@ public class AIBlackboard : MonoBehaviour
         Debug.DrawRay(transform.position, Quaternion.Euler(0,-SightRangeAngle, 0) * (transform.forward * SightRadius), Color.magenta);
         Debug.DrawRay(transform.position, Quaternion.Euler(0,SightRangeAngle, 0) * (transform.forward * SightRadius), Color.magenta);
         Debug.DrawLine(transform.position, _boss.transform.position, Color.cyan);
+    }
+
+    public void OnCollisionEnter(Collision other)
+    {
+        if (other.transform.tag.Equals("Bullet")) WasShot = true;
     }
 }
