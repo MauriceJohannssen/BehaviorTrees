@@ -29,8 +29,8 @@ public class GoToCover : Node
         _AI.angleToHideableObject = finalAngle;
         Vector3 bestPosition = new Vector3(Mathf.Cos(finalAngle), 0, Mathf.Sin(finalAngle)) * 4; /* * (4 + Random.Range(0.0f, 0.75f)); */
         
-        _AI.NavAgent.destination = _AI.CurrentCoverObject.transform.position + bestPosition;
         _AI.NavAgent.isStopped = false;
+        _AI.NavAgent.destination = _AI.CurrentCoverObject.transform.position + bestPosition;
         //Can is even be false?
         nodeState = State.Success;
         return nodeState;

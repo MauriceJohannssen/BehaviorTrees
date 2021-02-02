@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -35,8 +36,8 @@ public class AIBlackboard : MonoBehaviour
     [HideInInspector] public float angleToHideableObject;
 
     //Attack
-    [SerializeField] private float sightRadius = 5.0f;
-    public float SightRadius => sightRadius;
+    [SerializeField] private float shootRadius = 5.0f;
+    public float ShootRadius => shootRadius;
     [SerializeField] private float shootInterval = 1.0f;
     public float ShootInterval => shootInterval;
 
@@ -46,7 +47,12 @@ public class AIBlackboard : MonoBehaviour
     //Player
     private GameObject _player;
     public GameObject Player => _player;
-    
+    [HideInInspector]public Vector3 LastKnownPosition;
+    public float SightRangeAngle = 70.0f;
+    public float SightRadius = 30.0f;
+    public float NoticableProximity = 3.0f;
+    public bool SawPlayer = false;
+
     //Boss
     private GameObject _boss;
     public bool walkingToBoss = false;
@@ -111,14 +117,28 @@ public class AIBlackboard : MonoBehaviour
         //Attack=======================================================================================================
         AttackNode attackNode = new AttackNode(this, _player.transform);
         PlayerInReachNode playerInReachNode = new PlayerInReachNode(this, _player.transform);
-        SequenceNode attackSequenceNode = new SequenceNode(new List<Node> {playerInReachNode, attackNode});
+        PlayerInSight playerInSight = new PlayerInSight(this);
+        SequenceNode playerInSightSequenceNode = new SequenceNode(new List<Node>() {playerInReachNode, playerInSight});
+        SequenceNode attackSequenceNode = new SequenceNode(new List<Node> {playerInSightSequenceNode, attackNode});
 
         //Chase========================================================================================================
         ChaseNode chaseNode = new ChaseNode(this, _player.transform);
-        SequenceNode chasePlayerSequence = new SequenceNode(new List<Node> {chaseNode});
+        PlayerCloseProximityNode playerCloseProximityNode = new PlayerCloseProximityNode(this);
+        SelectorNode playerIntelSelector = new SelectorNode(new List<Node>() {playerInSight, playerCloseProximityNode});
+
+        RotateToFindPlayerNode rotateToFindPlayerNode = new RotateToFindPlayerNode(this);
+        //SequenceNode checkForPlayer = new SequenceNode(new List<Node>(){})
+
+        SequenceNode chasePlayerSequence = new SequenceNode(new List<Node> {playerIntelSelector, chaseNode});
+
+        SelectorNode chaseActionSelector =
+            new SelectorNode(new List<Node>() {chasePlayerSequence, rotateToFindPlayerNode});
+        
+        //Patrol=======================================================================================================
+        PatrolNode patrolNode = new PatrolNode(this);
 
         //Main=========================================================================================================
-        _mainNode = new SelectorNode(new List<Node> {healthSequenceNode, currentBossBehaviour, attackSequenceNode, chasePlayerSequence});
+        _mainNode = new SelectorNode(new List<Node> {healthSequenceNode, currentBossBehaviour, attackSequenceNode, chaseActionSelector, patrolNode});
     }
 
     public void ReduceHealth(float damage)
@@ -145,6 +165,7 @@ public class AIBlackboard : MonoBehaviour
         isCovered = false;
         _mainNode.EvaluateState();
         RegenerateHealth();
+        ShowDebugInfo();
     }
 
     private void GetAllHideables()
@@ -186,6 +207,14 @@ public class AIBlackboard : MonoBehaviour
         hidingFirstTime = true;
         _currentHealth = initialHealth;
         NavAgent = GetComponent<NavMeshAgent>();
-        NavAgent.isStopped = true;
+        NavAgent.isStopped = false;
+    }
+
+    private void ShowDebugInfo()
+    {
+        Debug.DrawRay(transform.position, transform.forward * shootRadius, Color.red);
+        Debug.DrawRay(transform.position, Quaternion.Euler(0,-SightRangeAngle, 0) * (transform.forward * SightRadius), Color.magenta);
+        Debug.DrawRay(transform.position, Quaternion.Euler(0,SightRangeAngle, 0) * (transform.forward * SightRadius), Color.magenta);
+        Debug.DrawLine(transform.position, _boss.transform.position, Color.cyan);
     }
 }

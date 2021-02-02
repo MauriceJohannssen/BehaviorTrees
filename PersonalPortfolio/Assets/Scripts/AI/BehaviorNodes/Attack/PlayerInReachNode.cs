@@ -14,7 +14,7 @@ public class PlayerInReachNode : Node
     public override State EvaluateState()
     {
         Vector3 vectorToPlayer = _player.position - _AI.transform.position;
-        nodeState = vectorToPlayer.magnitude <= _AI.SightRadius ? State.Success : State.Failure;
+        nodeState = vectorToPlayer.magnitude <= _AI.ShootRadius ? State.Success : State.Failure;
         return nodeState;
     }
 }

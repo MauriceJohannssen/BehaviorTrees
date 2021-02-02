@@ -13,8 +13,8 @@ public class ChaseNode : Node
 
     public override State EvaluateState()
     {
-        //_AI.NavAgent.isStopped = false;
-        //_AI.NavAgent.SetDestination(_player.position);
+        _AI.NavAgent.isStopped = false;
+        _AI.NavAgent.SetDestination(_AI.LastKnownPosition);
 
         //Can this even be a failure?
         nodeState = State.Success;
