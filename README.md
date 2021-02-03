@@ -12,5 +12,5 @@
     <h2>Current state of the behavior tree</h2>
 </Summary>
 
-![](GitHubIllustrations/BT_left.png)
-![](GitHubIllustrations/BT_right.png)
+![](pictures/BT_left.png)
+![](pictures/BT_right.png)
