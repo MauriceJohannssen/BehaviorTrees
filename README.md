@@ -9,8 +9,8 @@
         Should the agents lose the player, they'll walk to the last known position and look around, trying to find the player again.
         If health should be low, the agents take cover behind the first object, that fully covers it and get into position at the best possible angle to the player. The agents then actively walk around the object trying to maintain the best position, to stay out of sight to heal. If an obstacle should, e.g. fall over, the agents notice this and try to cover up somewhere else. Being at full health again, the agents look around, ensuring that there is no danger to then reunite.
     </p>
-    ![Behavior_Tree_Left](GitHubIllustrations/BT_left.png?raw=true "Behavior_Tree_Left")
-    ![Behavior_Tree_Right](GitHubIllustrations/BT_right.png?raw=true "Behavior_Tree_Right")
     <h2>Current state of the behavior tree</h2>
+    [Behavior_Tree_Left](GitHubIllustrations/BT_left.png)
+    [Behavior_Tree_Right](GitHubIllustrations/BT_right.png)
     
 </Summary>
