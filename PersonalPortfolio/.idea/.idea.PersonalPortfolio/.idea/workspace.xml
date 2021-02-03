@@ -21,24 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b8aa3e50-203a-4dcd-8529-8e48c5a46d4e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Box.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Box.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bullet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/WasShotNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/WasShotNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/BestCoverInReachNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/BestCoverInReachNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/CheckHealthNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/CheckHealthNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/CurrentCoverValid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/CurrentCoverValid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/CurrentlyCovered.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/CurrentlyCovered.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/GoToCover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/GoToCover.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/IsCoverReachableNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/IsCoverReachableNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/IsValidCoverLeftNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/IsValidCoverLeftNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/RepositionNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/RepositionNode.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Patrol/PatrolNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Patrol/PatrolNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ValidateHideableObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ValidateHideableObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/HDRPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/HDRPProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,8 +87,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/CurrentlyCovered.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/WasShotNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/GoToCover.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Patrol/PatrolNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Patrol/PatrolNode.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mnHZUbqW4XZeyWog7mp9QjbNqw" />
@@ -172,6 +156,7 @@
       <workItem from="1612281696128" duration="9670000" />
       <workItem from="1612293143426" duration="2975000" />
       <workItem from="1612308406806" duration="4611000" />
+      <workItem from="1612341330455" duration="2195000" />
     </task>
     <servers />
   </component>
