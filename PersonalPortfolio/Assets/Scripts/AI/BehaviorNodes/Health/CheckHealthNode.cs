@@ -1,6 +1,4 @@
-﻿using System.IO.Compression;
-using UnityEngine;
-using UnityEngine.Rendering.HighDefinition;
+﻿using UnityEngine;
 
 public class CheckHealthNode : Node
 {
@@ -17,11 +15,21 @@ public class CheckHealthNode : Node
     {
         if (_AI.hidingFirstTime)
         {
-            if (_AI.CurrentHealth <= _criticalHealthThreshold) nodeState = State.Success;
+            if (_AI.CurrentHealth <= _criticalHealthThreshold)
+            {
+                nodeState = State.Success;
+            }
+            else
+            {
+                nodeState = State.Failure;
+            }
         }
         else
         {
-            if (_AI.CurrentHealth < _AI.initialHealth) nodeState = State.Success;
+            if (_AI.CurrentHealth < _AI.initialHealth)
+            {
+                nodeState = State.Success;
+            }
             else
             {
                 _AI.hidingFirstTime = true;
@@ -32,4 +40,3 @@ public class CheckHealthNode : Node
         return nodeState;
     }
 }
- 

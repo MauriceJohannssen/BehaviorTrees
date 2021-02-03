@@ -13,7 +13,7 @@ public class IsValidCoverLeftNode : Node
     
     public override State EvaluateState()
     {
-        nodeState = _AI.GetAllHideableObject().Count > 0 ? State.Success : State.Failure;
+        nodeState = _AI.GetHideableObjects().Count > 0 ? State.Success : State.Failure;
         return nodeState;
     }
 }

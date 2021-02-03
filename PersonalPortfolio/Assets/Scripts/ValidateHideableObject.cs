@@ -39,4 +39,12 @@ public class ValidateHideableObject : MonoBehaviour
         //Debug.Log(transform.TransformPoint(currentHighestVertex).y);
         return transform.TransformPoint(currentHighestVertex);
     }
+
+    public float GetRadius()
+    {
+        float longestRadius = transform.lossyScale.x > transform.lossyScale.z
+            ? transform.lossyScale.x
+            : transform.lossyScale.z;
+        return longestRadius;
+    }
 }

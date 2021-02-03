@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 245557593725786001}
   m_Layer: 2
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,4 +139,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1
   collisionRayLength: 5
-  punchForce: 0.5
+  punchForce: 0.4

@@ -3,12 +3,10 @@ using System.Collections.Generic;
 
 public class IsCoverReachableNode : Node
 {
-    private List<GameObject> _hidePositions;
     private AIBlackboard _AI;
 
-    public IsCoverReachableNode(List<GameObject> hidePositions, AIBlackboard AI)
+    public IsCoverReachableNode(AIBlackboard AI)
     {
-        _hidePositions = hidePositions;
         _AI = AI;
     }
 
@@ -29,7 +27,7 @@ public class IsCoverReachableNode : Node
         //nodeState = currentShortestHideSpot < float.PositiveInfinity ? State.Success : State.Failure;
         //return nodeState;
 
-        foreach (var possiblePosition in _hidePositions)
+        foreach (var possiblePosition in _AI.GetHideableObjects())
         {
             if (Vector3.Distance(possiblePosition.transform.position, _AI.transform.position) <= _AI.HideRadius)
             {

@@ -12,7 +12,7 @@
         if (_AI.CurrentCoverObject == null) return State.Failure;
         
         if (_AI.CurrentCoverObject.GetComponent<ValidateHideableObject>().HighestPoint.y >=
-            _AI.transform.position.y + (_AI.transform.lossyScale.y / 2))
+            _AI.transform.position.y + _AI.transform.lossyScale.y * 2)
         {
             nodeState = State.Success;
         }

@@ -99,9 +99,9 @@ public class AIBlackboard : MonoBehaviour
         
         //IsHidingFirstTime sequence
         GoToCover goToCoverNode = new GoToCover(this);
-        BestCoverInReachNode bestCoverInReachNode = new BestCoverInReachNode(_hidePositions, this);
+        BestCoverInReachNode bestCoverInReachNode = new BestCoverInReachNode(this);
         SequenceNode goToReachableCoverSequence = new SequenceNode(new List<Node> {bestCoverInReachNode, goToCoverNode});
-        IsCoverReachableNode isCoverReachableNode = new IsCoverReachableNode(_hidePositions, this);
+        IsCoverReachableNode isCoverReachableNode = new IsCoverReachableNode(this);
         SequenceNode isCoverReachableSequence = new SequenceNode(new List<Node> {isCoverReachableNode, goToReachableCoverSequence});
 
         CurrentCoverValid currentCoverValidNode = new CurrentCoverValid(this);
@@ -188,7 +188,6 @@ public class AIBlackboard : MonoBehaviour
         ShowDebugInfo();
         CheckForDeath();
         WasShot = false;
-        Debug.Log("Health is " + CurrentHealth);
     }
 
     private void GetAllHideables()
@@ -199,14 +198,14 @@ public class AIBlackboard : MonoBehaviour
         }
     }
 
+    public List<GameObject> GetHideableObjects()
+    {
+        return _hidePositions;
+    }
+
     public void RemoveHideableObject(GameObject objectToRemove)
     {
         _hidePositions.Remove(objectToRemove);
-    }
-
-    public List<GameObject> GetAllHideableObject()
-    {
-        return _hidePositions;
     }
 
     private void FindBoss()
@@ -226,9 +225,9 @@ public class AIBlackboard : MonoBehaviour
 
     private void InitializeVariables()
     {
+        _currentHealth = initialHealth;
         _hidePositions = new List<GameObject>();
         hidingFirstTime = true;
-        _currentHealth = initialHealth;
         NavAgent = GetComponent<NavMeshAgent>();
         NavAgent.isStopped = false;
     }
@@ -239,6 +238,7 @@ public class AIBlackboard : MonoBehaviour
         Debug.DrawRay(transform.position, Quaternion.Euler(0,-SightRangeAngle, 0) * (transform.forward * SightRadius), Color.magenta);
         Debug.DrawRay(transform.position, Quaternion.Euler(0,SightRangeAngle, 0) * (transform.forward * SightRadius), Color.magenta);
         Debug.DrawLine(transform.position, _boss.transform.position, Color.cyan);
+        Debug.Log("Health is " + CurrentHealth);
     }
 
     public void OnCollisionEnter(Collision other)

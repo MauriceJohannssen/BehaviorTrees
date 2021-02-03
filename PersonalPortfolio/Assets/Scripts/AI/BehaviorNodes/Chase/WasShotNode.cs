@@ -11,8 +11,12 @@ public class WasShotNode : Node
 
     public override State EvaluateState()
     {
-        nodeState = _AI.WasShot ? State.Success : State.Failure;
-        _AI.LastKnownPosition = _AI.Player.transform.position;
+        if (_AI.WasShot)
+        {
+            _AI.LastKnownPosition = _AI.Player.transform.position;
+            nodeState = State.Success;
+        }
+        else nodeState = State.Failure;
         return nodeState;
     }
 }

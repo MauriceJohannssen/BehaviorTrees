@@ -17,13 +17,12 @@ public class RepositionNode : Node
         Vector3 playerToHideableObject = Vector3.Normalize(_AI.CurrentCoverObject.transform.position - _AI.Player.transform.position);
         Vector3 resultingCrossVec = Vector3.Cross(aiToHideableObject, playerToHideableObject);
         
-        _AI.angleToHideableObject += resultingCrossVec.y <= 0 ? -0.2f : 0.2f;
+        _AI.angleToHideableObject += resultingCrossVec.y <= 0 ? -0.15f : 0.15f;
 
         _AI.NavAgent.isStopped = false;
         _AI.NavAgent.destination = _AI.CurrentCoverObject.transform.position +
-                                   new Vector3(Mathf.Cos(_AI.angleToHideableObject), 0,
-                                       Mathf.Sin(_AI.angleToHideableObject)) * 4;// * (radius + Random.Range(0.0f,0.75f));
-        Debug.Log("Reposition");
+                                   _AI.CurrentCoverObject.transform.rotation * new Vector3(Mathf.Cos(_AI.angleToHideableObject), 0,
+                                       Mathf.Sin(_AI.angleToHideableObject)) * 5f;
         return State.Running;
     }
 }
