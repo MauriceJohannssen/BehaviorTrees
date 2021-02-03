@@ -16,6 +16,7 @@ public class PlayerCloseProximityNode : Node
         if (Vector3.Distance(_AI.transform.position, _AI.Player.transform.position) <= _AI.NoticableProximity)
         {
             _AI.LastKnownPosition = _AI.Player.transform.position;
+            _AI.SawPlayer = true;
             nodeState = State.Success;
         }
         else nodeState = State.Failure;

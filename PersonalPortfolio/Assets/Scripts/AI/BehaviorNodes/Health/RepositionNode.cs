@@ -17,7 +17,7 @@ public class RepositionNode : Node
         Vector3 playerToHideableObject = Vector3.Normalize(_AI.CurrentCoverObject.transform.position - _AI.Player.transform.position);
         Vector3 resultingCrossVec = Vector3.Cross(aiToHideableObject, playerToHideableObject);
         
-        _AI.angleToHideableObject += resultingCrossVec.y <= 0 ? -0.15f : 0.15f;
+        _AI.angleToHideableObject += resultingCrossVec.y <= 0 ? -0.3f : 0.3f;
 
         _AI.NavAgent.isStopped = false;
         _AI.NavAgent.destination = _AI.CurrentCoverObject.transform.position +

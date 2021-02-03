@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -15,10 +16,10 @@ public class Weapon : MonoBehaviour
 
     void Update(){
         if(Input.GetMouseButtonDown(0)){
-            Instantiate(bullet, transform.position + transform.rotation * new Vector3(0.12f,0.4f,0.7f), Quaternion.identity).GetComponent<Rigidbody>().AddForce(transform.forward * 10, ForceMode.Impulse);
+            Instantiate(bullet, transform.position + transform.rotation * new Vector3(0f,0.5f,0.5f), Quaternion.identity).GetComponent<Rigidbody>().AddForce(transform.forward * 10, ForceMode.Impulse);
         }
 
-        transform.position = Vector3.Lerp(transform.position, objectToFollow.transform.position + objectToFollow.transform.rotation * offsetToCamera, 0.6f);
+        transform.position = Vector3.Lerp(transform.position, objectToFollow.transform.position + objectToFollow.transform.rotation * offsetToCamera, 0.9f);
         transform.rotation = objectToFollow.transform.rotation;
     }
 }

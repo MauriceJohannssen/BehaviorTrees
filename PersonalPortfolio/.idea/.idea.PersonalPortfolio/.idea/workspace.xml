@@ -21,8 +21,26 @@
   <component name="ChangeListManager">
     <list default="true" id="b8aa3e50-203a-4dcd-8529-8e48c5a46d4e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Patrol/PatrolNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Patrol/PatrolNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/WallMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/WallMaterial.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Box.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Box.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Attack/PlayerInSight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Attack/PlayerInSight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/PlayerCloseProximityNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/PlayerCloseProximityNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/WasShotNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/WasShotNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/RepositionNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/RepositionNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/HDRenderPipelineAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/HDRenderPipelineAsset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/SampleScenePostProcessingSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/SampleScenePostProcessingSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/SampleSceneSkyandFogSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/SampleSceneSkyandFogSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LocalPackages/com.unity.render-pipelines.high-definition-config/Runtime/ShaderConfig.cs.hlsl" beforeDir="false" afterPath="$PROJECT_DIR$/LocalPackages/com.unity.render-pipelines.high-definition-config/Runtime/ShaderConfig.cs.hlsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/HDRPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/HDRPProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +63,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/EnemyWeapon.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/CurrentlyCovered.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/CoverInReach.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/FindCoverInReachNode.cs" />
@@ -72,7 +89,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/PatrolNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/GoToCover.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Boss/IsInRange.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/PlayerCloseProximityNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/ChaseNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/RotateToFindPlayerNode.cs" />
@@ -82,13 +98,19 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/IsValidCoverLeftNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/CheckHealthNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ValidateHideableObject.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/RepositionNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/CurrentCoverValid.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/CurrentlyCovered.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/WasShotNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/GoToCover.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Patrol/PatrolNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/RepositionNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CharacterMovement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EnemyWeapon.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Attack/PlayerInSight.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Weapon.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/WasShotNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/PlayerCloseProximityNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mnHZUbqW4XZeyWog7mp9QjbNqw" />
@@ -110,10 +132,19 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/New folder\PersonalPortfolio.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Mauri\Desktop\New folder" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -156,7 +187,10 @@
       <workItem from="1612281696128" duration="9670000" />
       <workItem from="1612293143426" duration="2975000" />
       <workItem from="1612308406806" duration="4611000" />
-      <workItem from="1612341330455" duration="2195000" />
+      <workItem from="1612341330455" duration="7396000" />
+      <workItem from="1612353520163" duration="1025000" />
+      <workItem from="1612361581202" duration="1204000" />
+      <workItem from="1612362934029" duration="1483000" />
     </task>
     <servers />
   </component>

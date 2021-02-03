@@ -30,6 +30,8 @@ public class PlayerInSight : Node
             {
                 _AI.LastKnownPosition = _AI.Player.transform.position;
                 _AI.SawPlayer = true;
+                //_AI.transform.LookAt(_AI.Player.transform.position);
+                _AI.transform.rotation = Quaternion.RotateTowards(_AI.transform.rotation, Quaternion.LookRotation(enemyToPlayer), 2);
                 nodeState = State.Success;
             }
         }
