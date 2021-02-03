@@ -10,7 +10,7 @@
         If health should be low, the agents take cover behind the first object, that fully covers it and get into position at the best possible angle to the player. The agents then actively walk around the object trying to maintain the best position, to stay out of sight to heal. If an obstacle should, e.g. fall over, the agents notice this and try to cover up somewhere else. Being at full health again, the agents look around, ensuring that there is no danger to then reunite.
     </p>
     <h2>Current state of the behavior tree</h2>
-    [Behavior_Tree_Left](GitHubIllustrations/BT_left.png)
-    [Behavior_Tree_Right](GitHubIllustrations/BT_right.png)
+    ![Behavior_Tree_Left](GitHubIllustrations/BT_left.png)
+    ![Behavior_Tree_Right](GitHubIllustrations/BT_right.png)
     
 </Summary>
