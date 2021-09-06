@@ -20,27 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8aa3e50-203a-4dcd-8529-8e48c5a46d4e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/contentModel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/riderModule.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/WallMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/WallMaterial.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Box.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Box.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Attack/PlayerInSight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Attack/PlayerInSight.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/PlayerCloseProximityNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/PlayerCloseProximityNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/WasShotNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/WasShotNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/RepositionNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/RepositionNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/HDRenderPipelineAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/HDRenderPipelineAsset.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/SampleScenePostProcessingSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/SampleScenePostProcessingSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/SampleSceneSkyandFogSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/SampleSceneSkyandFogSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LocalPackages/com.unity.render-pipelines.high-definition-config/Runtime/ShaderConfig.cs.hlsl" beforeDir="false" afterPath="$PROJECT_DIR$/LocalPackages/com.unity.render-pipelines.high-definition-config/Runtime/ShaderConfig.cs.hlsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PersonalPortfolio/riderModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HDRPDefaultResources/DXR 1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTreeNodes/InverterNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTreeNodes/InverterNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTreeNodes/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTreeNodes/Node.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTreeNodes/SelectorNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTreeNodes/SelectorNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTreeNodes/SequenceNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTreeNodes/SequenceNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/HDRPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/HDRPProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pictures/BT_left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pictures/BT_right.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +58,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/CurrentlyCovered.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/CoverInReach.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/FindCoverInReachNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/CheckHealthNode.cs" />
@@ -101,7 +95,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/CurrentCoverValid.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/CurrentlyCovered.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/GoToCover.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Patrol/PatrolNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Health/RepositionNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CharacterMovement.cs" />
@@ -111,6 +104,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/WasShotNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviorNodes/Chase/PlayerCloseProximityNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTreeNodes/Node.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTreeNodes/SelectorNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTreeNodes/SequenceNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTreeNodes/InverterNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/AIBlackboard.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mnHZUbqW4XZeyWog7mp9QjbNqw" />
@@ -133,7 +131,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -149,6 +147,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -158,6 +157,7 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -191,6 +191,7 @@
       <workItem from="1612353520163" duration="1025000" />
       <workItem from="1612361581202" duration="1204000" />
       <workItem from="1612362934029" duration="1483000" />
+      <workItem from="1630920747805" duration="1860000" />
     </task>
     <servers />
   </component>

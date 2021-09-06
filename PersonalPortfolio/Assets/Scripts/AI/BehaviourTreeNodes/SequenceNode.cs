@@ -39,3 +39,4 @@ public class SequenceNode : Node
         return nodeState;
     }
 }
+

@@ -90,7 +90,6 @@ public class AIBlackboard : MonoBehaviour
         
         //Health=======================================================================================================
         //Reposition sequence
-        
         //Reposition
         RepositionNode repositionNode = new RepositionNode(this);
         IsAtCoverNode isAtCoverNode = new IsAtCoverNode(this);
@@ -114,7 +113,10 @@ public class AIBlackboard : MonoBehaviour
         //CurrentlyCovered "Sequence"
         CurrentlyCovered currentlyCoveredNode = new CurrentlyCovered(this);
 
-        SelectorNode coverSelector = new SelectorNode(new List<Node> {currentlyCoveredNode, isHidingFirstTimeSequence, new InverterNode(repositionSequence)});
+        SelectorNode coverSelector = new SelectorNode(new List<Node>
+        {
+            currentlyCoveredNode, isHidingFirstTimeSequence, new InverterNode(repositionSequence)
+        });
 
         IsValidCoverLeftNode isValidCoverLeftNode = new IsValidCoverLeftNode(this);
         
