@@ -5,4 +5,4 @@ Artificial Intelligence always sparked my interest, especially in games. Thus, I
 For more details go to [Wiki](https://github.com/MauriceJohannssen/BehaviourTrees/wiki).
 ***
 
-https://user-images.githubusercontent.com/60900273/132203769-ca87c482-a437-491b-8523-650bd1cb3be2.mp4
+https://user-images.githubusercontent.com/60900273/133319466-fadda5bf-e7c7-4998-a9f2-677c72e9d537.mp4
